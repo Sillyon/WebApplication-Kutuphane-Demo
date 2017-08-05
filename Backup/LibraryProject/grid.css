@@ -1,0 +1,13 @@
+﻿th.sortasc a  
+{
+    display:block; padding:0 4px 0 15px; 
+    background:url(img/asc.gif) no-repeat;  
+}
+
+th.sortdesc a 
+{
+    display:block; padding:0 4px 0 15px; 
+    background:url(img/desc.gif) no-repeat;
+}
+
+th.

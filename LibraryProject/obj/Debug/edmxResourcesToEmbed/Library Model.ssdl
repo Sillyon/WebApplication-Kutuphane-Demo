@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Book" EntityType="Model.Store.Book" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Borrowed" EntityType="Model.Store.Borrowed" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Borrowed_Book" Association="Model.Store.FK_Borrowed_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Borrowed" EntitySet="Borrowed" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Writer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImgUrl" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Borrowed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BookID" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Person" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Borrowed_Book">
+    <End Role="Book" Type="Model.Store.Book" Multiplicity="1" />
+    <End Role="Borrowed" Type="Model.Store.Borrowed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Borrowed">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

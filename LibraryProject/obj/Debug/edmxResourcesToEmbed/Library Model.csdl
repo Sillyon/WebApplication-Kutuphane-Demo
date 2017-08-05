@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="Library_DatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Book" EntityType="Model.Book" />
+    <EntitySet Name="Borrowed" EntityType="Model.Borrowed" />
+    <AssociationSet Name="FK_Borrowed_Book" Association="Model.FK_Borrowed_Book">
+      <End Role="Book" EntitySet="Book" />
+      <End Role="Borrowed" EntitySet="Borrowed" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Writer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ImgUrl" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Borrowed" Relationship="Model.FK_Borrowed_Book" FromRole="Book" ToRole="Borrowed" />
+  </EntityType>
+  <EntityType Name="Borrowed">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Person" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Book" Relationship="Model.FK_Borrowed_Book" FromRole="Borrowed" ToRole="Book" />
+  </EntityType>
+  <Association Name="FK_Borrowed_Book">
+    <End Role="Book" Type="Model.Book" Multiplicity="1" />
+    <End Role="Borrowed" Type="Model.Borrowed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Book">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Borrowed">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
