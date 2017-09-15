@@ -20,3 +20,9 @@ C:\Users\Fatih07\Desktop\Genel_Staj\Projects\WebApplication Kütüphane Demo\Lib
 C:\Users\Fatih07\Desktop\Genel_Staj\Projects\WebApplication Kütüphane Demo\LibraryProject\bin\WebApplication15.pdb
 C:\Users\Fatih07\Desktop\Genel_Staj\Projects\WebApplication Kütüphane Demo\LibraryProject\obj\Debug\WebApplication15.dll
 C:\Users\Fatih07\Desktop\Genel_Staj\Projects\WebApplication Kütüphane Demo\LibraryProject\obj\Debug\WebApplication15.pdb
+C:\WebApplication Kütüphane Demo\WebApplication-K-t-phane-Demo\LibraryProject\bin\WebApplication15.dll.config
+C:\WebApplication Kütüphane Demo\WebApplication-K-t-phane-Demo\LibraryProject\bin\WebApplication15.dll
+C:\WebApplication Kütüphane Demo\WebApplication-K-t-phane-Demo\LibraryProject\bin\WebApplication15.pdb
+C:\WebApplication Kütüphane Demo\WebApplication-K-t-phane-Demo\LibraryProject\obj\Debug\LibraryProject.csprojResolveAssemblyReference.cache
+C:\WebApplication Kütüphane Demo\WebApplication-K-t-phane-Demo\LibraryProject\obj\Debug\WebApplication15.dll
+C:\WebApplication Kütüphane Demo\WebApplication-K-t-phane-Demo\LibraryProject\obj\Debug\WebApplication15.pdb
